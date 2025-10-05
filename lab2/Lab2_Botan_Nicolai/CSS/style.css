@@ -52,3 +52,17 @@ td {
 tfoot td {
     padding: 10px 0;
 }
+
+thead {
+    background-color: green;
+    color: white;
+}
+
+tbody {
+    background-color: rgba(0, 128, 0, 0.25);
+}
+
+
+tfoot {
+    background-color: rgba(0, 128, 0, 0.5);
+}
