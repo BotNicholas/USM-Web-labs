@@ -1,0 +1,145 @@
+.container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 15vw 1fr;
+    grid-template-rows: 30px calc(100vh - 30px) min-content;
+    transition: all 200ms;
+}
+
+main {
+    overflow: hidden;
+}
+
+.gradients {
+    margin-top: 50px;
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.gradient {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.example {
+    width: 200px;
+    height: 200px;
+    background-color: rgb(0, 0, 0);
+}
+
+.gradient:nth-child(1) .example{
+    background: linear-gradient(45deg, #642b73, #C6426E);
+}
+
+.gradient:nth-child(2) .example{
+    background: radial-gradient(#C6426E, #642b73);
+    /*background: radial-gradient(circle at bottom left, #C6426E, #642b73);*/
+}
+
+.gradient:nth-child(3) .example{
+    background: conic-gradient(red, yellow, green, blue);
+    /*background: conic-gradient(from 0deg, red, yellow, green, blue);*/
+    /*background: conic-gradient(from 90deg, red, yellow, green, blue);*/
+    /*background: conic-gradient(at bottom center, red, yellow, green, blue);*/
+}
+
+.gradient:nth-child(4) .example{
+    background: repeating-linear-gradient(
+            45deg,
+            #C6426E 0px, /*start*/
+            #C6426E 10px, /*end*/
+            #642b73 10px,
+            #642b73 20px
+    );
+}
+
+.gradient:nth-child(5) .example{
+    background: repeating-radial-gradient(
+            circle,
+            #C6426E 0,
+            #C6426E 10px,
+            #642b73 10px,
+            #642b73 20px
+    );
+}
+
+.gradient:nth-child(6) .example{
+    background: repeating-conic-gradient(
+            #C6426E 0deg 10deg, /*start-end. On angle from 0 to 10*/
+            #642b73 10deg 20deg /*on angle from 10 to 20 and repeat*/
+    );
+}
+
+@media (max-width: 500px) {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 30px calc(100vh - 30px) min-content min-content min-content;
+    }
+
+    .gradients {
+        margin-top: 50px;
+        display: grid;
+        grid-auto-flow: row;
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        grid-column: auto;
+    }
+
+    .nav-main {
+        display: none;
+    }
+
+    .option {
+        padding: 10px 5px;
+        border-bottom: 1px solid white;
+        position: relative;
+        background: linear-gradient(90deg, #642b73, #C6426E, #642b73);
+        flex-grow: 1;
+        border-left: 1px solid white;
+        border-bottom: none;
+        text-align: center;
+        /*background-color: #642b73;*/
+    }
+
+    .option:hover {
+        transition: all 500ms;
+        color: white;
+        text-shadow: 0 0 5px white;
+        cursor: pointer;
+    }
+
+    .option:active {
+        color: white;
+        text-shadow: 0 0 5px white;
+        cursor: pointer;
+    }
+
+    .option:nth-child(1) {
+        border: none;
+    }
+
+    .nav-mobile {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    main {
+        padding-left: 30px;
+        padding-right: 35px;
+        overflow: scroll;
+    }
+
+    main section:nth-child(1) {
+        margin-top: 25px;
+    }
+
+    footer {
+        grid-column: auto;
+    }
+}
