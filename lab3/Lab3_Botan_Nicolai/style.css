@@ -1,13 +1,21 @@
+html {
+    min-width: 100px;
+}
+
 body {
     margin: 0;
     height: 100vh;
 }
 
 .container {
-    display: grid;
     height: 100vh;
+    display: grid;
     grid-template-columns: 15vw 1fr 10vw;
     grid-template-rows: 30px calc(100vh - 30px) min-content;
+}
+
+.nav-mobile {
+    display: none;
 }
 
 header {
@@ -15,7 +23,7 @@ header {
     background-color: green;
 }
 
-nav {
+.nav-main {
     background-color: blue;
 }
 
@@ -30,4 +38,37 @@ aside {
 footer {
     grid-column: 1 / span 3;
     background-color: rebeccapurple;
+}
+
+@media (max-width: 500px) {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        /*grid-template-rows: 30px calc(100vh - 30px) min-content min-content min-content;*/
+        grid-template-rows: 30px auto;
+    }
+
+    header {
+        background-color: green;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .nav-mobile {
+        display: block;
+    }
+
+    main {
+        background-color: yellow;
+    }
+
+    aside {
+        background-color: orange;
+    }
+
+    footer {
+        background-color: rebeccapurple;
+    }
 }
