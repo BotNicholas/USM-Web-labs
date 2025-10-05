@@ -11,6 +11,7 @@ main {
 }
 
 .gradients {
+    gap: 5px;
     margin-top: 50px;
     display: grid;
     grid-auto-flow: row;
