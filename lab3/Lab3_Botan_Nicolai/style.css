@@ -44,11 +44,12 @@ footer {
     .container {
         display: grid;
         grid-template-columns: 1fr;
-        /*grid-template-rows: 30px calc(100vh - 30px) min-content min-content min-content;*/
-        grid-template-rows: 30px auto;
+        grid-template-rows: 30px calc(100vh - 30px) min-content min-content min-content;
+        /*grid-template-rows: 30px auto;*/
     }
 
     header {
+        grid-column: auto;
         background-color: green;
     }
 
@@ -69,6 +70,7 @@ footer {
     }
 
     footer {
+        grid-column: auto;
         background-color: rebeccapurple;
     }
 }
