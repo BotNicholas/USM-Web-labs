@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="description" content="This is an HTML file where I implement the second task of the lab2"/>
+    <meta name="keywords" content="HTML, Lab2"/>
+    <meta name="author" content="Botan Nicolai"/>
+    <link rel="icon" type="image/x-icon" href="../Images/icon.ico"/>
+    <title>Laborator nr.2 Task 2</title>
+    <style>
+        ul {
+            background-color: lightgrey;
+            width: 100px;
+            border-radius: 10px;
+            list-style-type: circle;
+            padding: 5px 5px 5px 25px;
+            list-style-image: url("../Images/ul-marker.gif");
+            /*list-style-position: inside;*/
+        }
+
+        ul li {
+            background-color: antiquewhite;
+            width: 90%;
+            border-radius: 10px;
+            padding: 2px 5px;
+            text-align: center;
+            margin: 2px 0;
+        }
+
+        ol {
+            /*list-style-type: upper-roman;*/
+            list-style-image: url("../Images/ol-marker.png");
+            list-style-position: inside;
+            width: 250px;
+            padding-left: 0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        ol li {
+            box-shadow: 0 2px 5px dimgrey;
+            padding: 2px 10px;
+        }
+
+        ol li:nth-child(odd) {
+            /*list-style-type: upper-latin;*/
+            padding-left: 20px;
+        }
+
+        ol li:nth-child(1n) {
+            background-color: rgba(56, 127, 242, 0.1);
+        }
+
+        ol li:nth-child(2n) {
+            background-color: rgba(56, 127, 242, 0.2);
+        }
+
+        ol li:nth-child(3n) {
+            background-color: rgba(56, 127, 242, 0.3);
+        }
+
+        ol li:nth-child(4) {
+            background-color: rgba(56, 127, 242, 0.4);
+        }
+
+        ol li:nth-child(5) {
+            background-color: rgba(56, 127, 242, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <h3>Steps to write a CV:</h3>
+    <ol>
+        <li>
+            <span>
+                Collect Your Information
+            </span>
+        </li>
+        <li>
+            <span>
+                Choose the Right Format
+            </span>
+        </li>
+        <li>
+            <span>
+                Write Core Sections
+            </span>
+        </li>
+        <li>
+            <span>
+                Tailor to the Role
+            </span>
+        </li>
+        <li>
+            <span>
+                Polish and Review
+            </span>
+        </li>
+    </ol>
+    <hr/>
+    <h3>Groceries:</h3>
+    <ul>
+        <li>
+            Milk
+        </li>
+        <li>
+            Eggs
+        </li>
+        <li>
+            Bread
+        </li>
+        <li>
+            Water
+        </li>
+        <li>
+            Tomatoes
+        </li>
+    </ul>
+</body>
+</html>
