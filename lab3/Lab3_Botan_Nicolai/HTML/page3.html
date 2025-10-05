@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="description" content="This is an HTML file where I implement lab2"/>
+  <meta name="keywords" content="HTML, Lab3"/>
+  <meta name="author" content="Botan Nicolai"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/x-icon" href="../Images/icon.ico"/>
+  <link rel="stylesheet" type="text/css" href="../style.css"/>
+  <link rel="stylesheet" type="text/css" href="./style3.css"/>
+  <title>Laborator nr.3</title>
+  <style>
+    .container {
+      height: 100vh;
+      display: grid;
+      grid-template-columns: 15vw 1fr;
+      grid-template-rows: 30px calc(100vh - 30px) min-content;
+      transition: all 200ms;
+    }
+
+    main {
+      overflow: hidden;
+    }
+
+    .transformations {
+      margin-top: 50px;
+      display: grid;
+      grid-auto-flow: row;
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    .transformation {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .base {
+      width: 200px;
+      height: 200px;
+      background-color: rgb(62, 62, 62);
+      position: absolute;
+    }
+
+    .example {
+      z-index: 1;
+      width: 200px;
+      height: 200px;
+      background-color: rgb(213, 137, 1);
+    }
+
+    .transformation:nth-child(1) .example{
+      transform: translate(20px, 10px);
+    }
+
+    .transformation:nth-child(2) .example{
+      transform: scale(0.5);
+    }
+
+    .transformation:nth-child(3) .example{
+      transform: scale(0.75) rotate(45deg);
+    }
+
+    .transformation:nth-child(4) .example{
+      transform: skew(10deg, 10deg);
+    }
+
+    .transformation:nth-child(5) .example{
+      transform: matrix(0.5, 0.2, -0.5, 0.5, 30, 20); /*matrix(scaleX, skewY, skewX, scaleY, translateX, translateY)*/
+    }
+
+    @media (max-width: 500px) {
+      .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 30px calc(100vh - 30px) min-content min-content min-content;
+      }
+
+      .transformations {
+        margin-top: 50px;
+        display: grid;
+        grid-auto-flow: row;
+        grid-template-columns: 1fr;
+      }
+
+      header {
+        grid-column: auto;
+      }
+
+      .nav-main {
+        display: none;
+      }
+
+      .option {
+        padding: 10px 5px;
+        border-bottom: 1px solid white;
+        position: relative;
+        background: linear-gradient(90deg, #642b73, #C6426E, #642b73);
+        flex-grow: 1;
+        border-left: 1px solid white;
+        border-bottom: none;
+        text-align: center;
+        /*background-color: #642b73;*/
+      }
+
+      .option:hover {
+        transition: all 500ms;
+        color: white;
+        text-shadow: 0 0 5px white;
+        cursor: pointer;
+      }
+
+      .option:active {
+        color: white;
+        text-shadow: 0 0 5px white;
+        cursor: pointer;
+      }
+
+      .option:nth-child(1) {
+        border: none;
+      }
+
+      .nav-mobile {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+
+      main {
+        padding-left: 30px;
+        padding-right: 35px;
+        overflow: scroll;
+      }
+
+      main section:nth-child(1) {
+        margin-top: 25px;
+      }
+
+      footer {
+        grid-column: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <img src="../Images/logo.gif" alt="logo"/>
+      <h2>AllBooks</h2>
+    </header>
+    <nav class="nav-main">
+      <a class="option" href="../index.html">See all books
+      </a>
+      <a class="option" href="./page2.html">See CSS Gradients</a>
+      <a class="option" href="./page3.html">
+        <span>See CSS Transforms</span>
+        <img src="../Images/img.png" alt="arrow"/>
+      </a>
+      <svg id="expander" class="expander" clip-rule="evenodd" fill-rule="evenodd" fill="white" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m21 15.75c0-.414-.336-.75-.75-.75h-16.5c-.414 0-.75.336-.75.75s.336.75.75.75h16.5c.414 0 .75-.336.75-.75zm0-4c0-.414-.336-.75-.75-.75h-16.5c-.414 0-.75.336-.75.75s.336.75.75.75h16.5c.414 0 .75-.336.75-.75zm0-4c0-.414-.336-.75-.75-.75h-16.5c-.414 0-.75.336-.75.75s.336.75.75.75h16.5c.414 0 .75-.336.75-.75z" fill-rule="nonzero"/></svg>
+
+    </nav>
+    <main>
+      <div class="transformations">
+        <div class="transformation">
+          <div class="base"></div>
+          <div class="example"></div>
+          <h3>Translate</h3>
+        </div>
+        <div class="transformation">
+          <div class="base"></div>
+          <div class="example"></div>
+          <h3>Scale</h3>
+        </div>
+        <div class="transformation">
+          <div class="base"></div>
+          <div class="example"></div>
+          <h3>Rotate</h3>
+        </div>
+        <div class="transformation">
+          <div class="base"></div>
+          <div class="example"></div>
+          <h3>Skew</h3>
+        </div>
+        <div class="transformation">
+          <div class="base"></div>
+          <div class="example"></div>
+          <h3>Matrix</h3>
+        </div>
+      </div>
+    </main>
+    <nav class="nav-mobile">
+      <a class="option" href="../index.html">See all books</a>
+      <a class="option" href="./page2.html">See CSS Gradients</a>
+      <a class="option" href="./page3.html">See CSS Transforms</a>
+    </nav>
+    <footer>
+        <p>&copy; 2025 AllBooks. All rights reserved.</p>
+
+        <nav class="footer-nav">
+          <a href="/about">About Us</a> |
+          <a href="/contact">Contact</a> |
+          <a href="/privacy">Privacy Policy</a> |
+          <a href="/terms">Terms of Service</a>
+        </nav>
+
+        <div class="social-links">
+          <a href="https://facebook.com" target="_blank">Facebook</a> |
+          <a href="https://twitter.com" target="_blank">Twitter</a> |
+          <a href="https://instagram.com" target="_blank">Instagram</a>
+        </div>
+    </footer>
+  </div>
+
+  <script src="../index.js"></script>
+</body>
+</html>
