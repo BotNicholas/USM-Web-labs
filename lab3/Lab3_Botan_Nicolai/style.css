@@ -67,12 +67,17 @@ main {
     min-width: 0;
     padding-left: 45px;
     padding-right: 45px;
-    background-color: white;
+    /* background-color: white; */
     overflow: scroll;
+    background-image: url(./Images/background.png);
+    background-position: fixed;
+    background-size: cover;
+    color: white;
 }
 
 aside {
     border-left: 1px ridge lightgray;
+    background: linear-gradient(#272727, #202020);
 }
 
 .ad {
@@ -105,7 +110,7 @@ aside .header {
 
 .ad a {
     text-decoration: none;
-    color: black;
+    color: white;
     font-size: 8pt;
     text-align: center;
     font-family: Georgia, serif;
@@ -169,7 +174,7 @@ footer {
 
 .book {
     text-decoration: none;
-    color: black;
+    color: white;
     display: flex;
     flex-direction: column;
     width: 200px;
@@ -290,6 +295,7 @@ main section:nth-child(1) {
     main {
         padding-left: 30px;
         padding-right: 35px;
+        background-image: url(./Images/background-mobile.png);
     }
 
     .book {
